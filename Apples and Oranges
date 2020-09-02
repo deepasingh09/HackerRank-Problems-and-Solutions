@@ -1,0 +1,38 @@
+public class Solution {
+
+   
+    static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
+        int cntA=0,cntO=0;
+
+        int app_pos[]=new int[apples.length];
+        int ora_pos[]=new int[oranges.length];
+        for(int i=0;i<app_pos.length;i++)
+        {
+            app_pos[i]=a+apples[i];
+        }
+        for(int i=0;i<ora_pos.length;i++)
+        {
+            ora_pos[i]=b+oranges[i];
+            
+        }
+        
+        for(int i=0;i<app_pos.length;i++)
+        {
+            if(app_pos[i]>=s && app_pos[i]<=t)
+            {
+                cntA++;
+            }
+           
+        }
+        for(int i=0;i<ora_pos.length;i++)
+        {
+            if(ora_pos[i]<=t && ora_pos[i]>=s)
+            {
+                
+                cntO++;
+            }
+           
+        }
+        System.out.println(cntA);
+        System.out.println(cntO);
+    }
